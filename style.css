@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; 
+    color: #fff;
+}
+
+.inner { 
+    height: 100%;
+}
+
+.input-box {
+    height: 80%;
+}
+/* grid */
+.input {
+    display: grid;
+    grid-template-areas:
+    'reset back back plus'
+    'one two three minus'
+    'four five six multiplication'
+    'seven eight nine division'
+    'null float equal equal';
+    list-style: none;
+    height: 100%;
+    padding: 1rem 2rem 2rem 2rem;
+    grid-gap: 1rem;
+}
+
+.reset {
+    grid-area: reset;
+}
+
+.back {
+    grid-area: back;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.multiplication {
+    grid-area: multiplication;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.division {
+    grid-area: division;
+}
+
+.zero {
+    grid-area: null;
+}
+
+.decimal {
+    grid-area: float;
+}
+
+.equal {
+    grid-area: equal;
+}
+/* buttons */
+
+.btn, .btn-light {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.small {
+    font-size: 1.5rem;
+}
+
+.btn {
+    background: #2e2844;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #262139;
+    cursor: pointer;
+}
+
+.btn-light {
+    background: #4a4363;
+    transition: 0.3s;
+}
+
+.btn-light:hover {
+    background: #342c51;
+    cursor: pointer;
+}
+
+.btn-orange {
+    background: #d39547;
+    transition: 0.3s;
+}
+
+.btn-orange:hover {
+    background: #c47b20;
+    cursor: pointer;
+}
+
+/* containers */
+.result-box {
+    height: 20%;
+    display: grid;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 4rem;
+    height: 100%;
+    background: #4a4363;
+    font-size: 4rem;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    background: #231e36;
+}
