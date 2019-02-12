@@ -129,8 +129,6 @@ subtraction.addEventListener('click', getSub);
 decimal.addEventListener('click', addDecimal);
 // functions
 function getReset() {
-    console.log(expression);
-    console.log(expressionTwo);
     expression = '';
     expressionTwo = '';
     result.textContent = '';
