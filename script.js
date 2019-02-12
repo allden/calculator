@@ -1,12 +1,15 @@
 let expression = '';
 let expressionTwo = '';
-let operator = '';
 // while this is true update expression, if it's false update expressionTwo
 let flag = true;
+// depending on which operator we press, one of these will be active.
+// we use them so that getResult knows what operator to use
 var addMode = false;
 var subMode = false;
 var mulMode = false;
 var divMode = false;
+// after getResult() is used, 
+// this is true and we can't add a new value to expressionTwo so the user is forced to click an operator
 let lock = false;
 // boxes
 let result = document.querySelector('.result');
@@ -39,11 +42,8 @@ let subtraction = document.querySelector('.minus');
 one.addEventListener('click', function() {
     if(flag) {
         updateResult(one);
-        console.log(expression);
     } else if(lock === false) {
         updateResultTwo(one);
-        console.log(expression)
-        console.log(expressionTwo);
     }
 });
 
@@ -167,7 +167,6 @@ function getBack() {
 
 function getResult() {
     lock = true;
-    console.log(lock);
     if(addMode) {
         addMode = false;
         expression = +expression + +expressionTwo;
