@@ -11,6 +11,7 @@ var divMode = false;
 // after getResult() is used, 
 // this is true and we can't add a new value to expressionTwo so the user is forced to click an operator
 let lock = false;
+let clicked = false;
 // boxes
 let result = document.querySelector('.result');
 
@@ -121,11 +122,27 @@ zero.addEventListener('click', function() {
 
 back.addEventListener('click', getBack);
 reset.addEventListener('click', getReset);
-plus.addEventListener('click', getAddition);
 equal.addEventListener('click', getResult);
-multiply.addEventListener('click', getMultiplication);
-division.addEventListener('click', getDivision);
-subtraction.addEventListener('click', getSub);
+plus.addEventListener('click', () => {
+    if(clicked === false) {
+        getAddition();
+    }
+});
+multiply.addEventListener('click', () => {
+    if(clicked === false){
+        getMultiplication();
+    }
+});
+division.addEventListener('click', () => {
+    if(clicked === false){
+        getDivision();
+    }
+});
+subtraction.addEventListener('click', () => {
+    if(clicked === false){
+        getSub();
+    }
+});
 decimal.addEventListener('click', addDecimal);
 // functions
 function getReset() {
@@ -165,6 +182,7 @@ function getBack() {
 
 function getResult() {
     lock = true;
+    clicked = false;
     if(addMode) {
         addMode = false;
         expression = +expression + +expressionTwo;
@@ -219,6 +237,7 @@ function getMultiplication() {
     divMode = false;
     flag = false;
     lock = false;
+    clicked = true;
     result.textContent = '';
 }
 
